@@ -1,0 +1,10 @@
+name,ttl,type,value
+"ardikhlas.com","3600","NETLIFY","ardikhlas.netlify.app"
+"www.ardikhlas.com","3600","NETLIFY","ardikhlas.netlify.app"
+"ardikhlas.com","3600","TXT","zoho-verification=zb63000093.zmverify.zoho.com"
+"ardikhlas.com","3600","MX","mx.zoho.com"
+"ardikhlas.com","3600","MX","mx2.zoho.com"
+"ardikhlas.com","3600","MX","mx3.zoho.com"
+"ardikhlas.com","3600","TXT","v=spf1 include:zohomail.com ~all"
+"ardikhlas.com","3600","SPF","v=spf1 include:zohomail.com ~all"
+"zmail._domainkey.ardikhlas.com","3600","TXT","v=DKIM1; k=rsa; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDX2WJg/7Z4VwdwTQGBSHNk7BCDGWhAUpMlZyqZo9aK9u8TbD29Ln0irOMp3K+LPRgeDXw7bP/ae6+SGOG2Gl9HL9pmO0jwINTP8p9i6cgp5cwewL6TLvhLXkT/7Slf8pzY8DVQ8FizrPqJF0PeOqBfia4xzNXkCFOomoZcop/WZwIDAQAB"

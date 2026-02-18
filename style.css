@@ -29,6 +29,17 @@ body {
   line-height: 1.65;
 }
 
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -132,6 +143,28 @@ img {
 
 .desktop-cta {
   display: none;
+}
+
+.language-switcher {
+  display: inline-flex;
+  align-items: center;
+}
+
+.language-switcher select {
+  min-height: 40px;
+  padding: 0.45rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 0.55rem;
+  background: #ffffff;
+  color: var(--primary-dark);
+  font-family: "Poppins", sans-serif;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.language-switcher select:focus {
+  outline: 2px solid color-mix(in oklab, var(--primary) 35%, transparent);
+  outline-offset: 1px;
 }
 
 .menu-toggle {
@@ -696,6 +729,25 @@ img {
   border-top: 1px solid color-mix(in oklab, var(--primary) 35%, transparent);
   padding-block: 1rem 1.6rem;
   text-align: center;
+}
+
+html[dir="ltr"] .nav-link::after {
+  left: 0;
+  right: auto;
+}
+
+html[dir="ltr"] .section-head-left {
+  text-align: left;
+}
+
+html[dir="ltr"] .product-card li {
+  padding-left: 0.85rem;
+  padding-right: 0;
+}
+
+html[dir="ltr"] .product-card li::before {
+  left: 0;
+  right: auto;
 }
 
 @media (min-width: 640px) {
