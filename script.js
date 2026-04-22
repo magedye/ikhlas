@@ -666,6 +666,35 @@ function getFormStatusText(type, contactEmail) {
   return messages[language][type];
 }
 
+function getFormSubmitErrorText(result, contactEmail) {
+  const language = currentLanguage === "ar" ? "ar" : "en";
+  const providerMessage = typeof result?.message === "string" ? result.message : "";
+  const normalizedMessage = providerMessage.toLowerCase();
+
+  if (normalizedMessage.includes("needs activation") || normalizedMessage.includes("activate form")) {
+    return language === "ar"
+      ? `النموذج يحتاج تفعيلًا أوليًا. تم إرسال رسالة تفعيل إلى ${contactEmail}. افتح البريد واضغط رابط Activate Form ثم أعد المحاولة.`
+      : `This form needs activation. FormSubmit sent an activation email to ${contactEmail}. Open it and click "Activate Form", then try again.`;
+  }
+
+  if (
+    normalizedMessage.includes("open this page through a web server") ||
+    normalizedMessage.includes("browsed as html files")
+  ) {
+    return language === "ar"
+      ? "افتح الموقع عبر خادم ويب (مثل Live Server أو http://127.0.0.1:5500) وليس مباشرة كملف HTML."
+      : "Open the website through a web server (for example Live Server or http://127.0.0.1:5500), not as a local HTML file.";
+  }
+
+  if (providerMessage) {
+    return language === "ar"
+      ? `تعذر إرسال الرسالة. سبب الخدمة: ${providerMessage}`
+      : `Message could not be sent. Service response: ${providerMessage}`;
+  }
+
+  return getFormStatusText("error", contactEmail);
+}
+
 if (form && formStatus) {
   const submitButton = form.querySelector('button[type="submit"]');
   const contactEmail = resolveContactEmail();
@@ -688,6 +717,8 @@ if (form && formStatus) {
     if (submitButton) {
       submitButton.disabled = true;
     }
+
+    let submissionResult = null;
 
     try {
       const formData = new FormData(form);
@@ -717,6 +748,7 @@ if (form && formStatus) {
       } catch {
         result = null;
       }
+      submissionResult = result;
 
       const isSuccess =
         response.ok && (!result || result.success === true || result.success === "true");
@@ -729,7 +761,7 @@ if (form && formStatus) {
       form.reset();
     } catch (error) {
       console.error(error);
-      formStatus.textContent = getFormStatusText("error", contactEmail);
+      formStatus.textContent = getFormSubmitErrorText(submissionResult, contactEmail);
     } finally {
       if (submitButton) {
         submitButton.disabled = false;
