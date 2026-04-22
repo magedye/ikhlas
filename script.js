@@ -6,6 +6,8 @@ const formStatus = document.getElementById("form-status");
 const languageSelect = document.getElementById("language-select");
 const metaDescription = document.querySelector('meta[name="description"]');
 const footerCopyright = document.querySelector(".footer-bottom p");
+const siteHeader = document.querySelector(".site-header");
+let cachedHeaderHeight = 0;
 
 const languageMeta = {
   en: {
@@ -446,9 +448,15 @@ const placeholderTranslations = [
 let currentLanguage = "en";
 
 function setCurrentYear() {
+  const currentYear = String(new Date().getFullYear());
   const yearNode = document.getElementById("current-year");
   if (yearNode) {
-    yearNode.textContent = new Date().getFullYear();
+    yearNode.textContent = currentYear;
+    return;
+  }
+
+  if (footerCopyright) {
+    footerCopyright.textContent = footerCopyright.textContent.replace(/\b\d{4}\b/, currentYear);
   }
 }
 
@@ -473,6 +481,31 @@ function updateMenuToggleLabel() {
   const labels = menuToggleLabels[currentLanguage];
   const isOpen = mobileNav?.classList.contains("open");
   menuToggle.setAttribute("aria-label", isOpen ? labels.close : labels.open);
+}
+
+function updateHeaderHeight() {
+  cachedHeaderHeight = siteHeader?.offsetHeight || 0;
+}
+
+function setupImageErrorHandling() {
+  const imageSelectors = [".brand-mark", ".identity-mark", ".footer-mark"];
+
+  imageSelectors.forEach((selector) => {
+    const imageNode = document.querySelector(selector);
+    if (!imageNode) {
+      return;
+    }
+
+    imageNode.addEventListener(
+      "error",
+      () => {
+        imageNode.style.display = "none";
+        imageNode.setAttribute("aria-hidden", "true");
+        updateHeaderHeight();
+      },
+      { once: true }
+    );
+  });
 }
 
 function applyLanguage(language) {
@@ -509,6 +542,7 @@ function applyLanguage(language) {
 
   setCurrentYear();
   updateMenuToggleLabel();
+  updateHeaderHeight();
 
   if (languageSelect) {
     languageSelect.value = selectedLanguage;
@@ -516,6 +550,8 @@ function applyLanguage(language) {
 }
 
 applyLanguage("en");
+setupImageErrorHandling();
+window.addEventListener("resize", updateHeaderHeight);
 
 if (languageSelect) {
   languageSelect.addEventListener("change", (event) => {
@@ -527,8 +563,9 @@ if (menuToggle && mobileNav) {
   menuToggle.addEventListener("click", () => {
     const isOpen = mobileNav.classList.toggle("open");
     menuToggle.setAttribute("aria-expanded", String(isOpen));
-    menuToggle.textContent = isOpen ? "✕" : "☰";
+    menuToggle.textContent = isOpen ? "\u2715" : "\u2630";
     updateMenuToggleLabel();
+    updateHeaderHeight();
   });
 }
 
@@ -546,8 +583,7 @@ allSectionLinks.forEach((link) => {
 
     event.preventDefault();
 
-    const headerHeight = document.querySelector(".site-header")?.offsetHeight || 0;
-    const targetTop = target.getBoundingClientRect().top + window.scrollY - headerHeight + 2;
+    const targetTop = target.getBoundingClientRect().top + window.scrollY - cachedHeaderHeight + 2;
 
     window.scrollTo({
       top: targetTop,
@@ -558,13 +594,13 @@ allSectionLinks.forEach((link) => {
       mobileNav.classList.remove("open");
       menuToggle?.setAttribute("aria-expanded", "false");
       if (menuToggle) {
-        menuToggle.textContent = "☰";
+        menuToggle.textContent = "\u2630";
       }
       updateMenuToggleLabel();
+      updateHeaderHeight();
     }
   });
 });
-
 const sections = ["home", "products", "about", "contact"]
   .map((id) => document.getElementById(id))
   .filter(Boolean);
