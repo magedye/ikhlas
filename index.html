@@ -1,0 +1,398 @@
+﻿<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A Yemeni company specialized in importing, supplying, and distributing food products wholesale."
+    />
+    <title>Ard Al Ekhlas Foodstuff</title>
+    <link rel="icon" type="image/jpeg" href="icon.jpeg" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Lora:wght@400;500&family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header class="site-header" id="home">
+      <div class="container header-inner">
+        <a class="brand" href="#home" aria-label="الرجوع إلى الرئيسية">
+          <img class="brand-mark" src="icon.jpeg" alt="شعار أرض الإخلاص" />
+          <span class="brand-copy">
+            <strong>أرض الإخلاص</strong>
+            <small>للمواد الغذائية</small>
+          </span>
+        </a>
+
+        <nav class="main-nav" aria-label="التنقل الرئيسي">
+          <a class="nav-link" href="#home">الرئيسية</a>
+          <a class="nav-link" href="#products">المنتجات</a>
+          <a class="nav-link" href="#about">من نحن</a>
+          <a class="nav-link" href="#contact">اتصل بنا</a>
+        </nav>
+
+        <div class="language-switcher">
+          <label class="sr-only" for="language-select">Select language</label>
+          <select id="language-select" aria-label="Select language">
+            <option value="en" selected>English</option>
+            <option value="ar">العربية</option>
+          </select>
+        </div>
+
+        <a class="btn btn-primary desktop-cta" href="#contact">تواصل معنا</a>
+
+        <button
+          class="menu-toggle"
+          id="menu-toggle"
+          type="button"
+          aria-label="فتح القائمة"
+          aria-expanded="false"
+          aria-controls="mobile-nav"
+        >
+          ☰
+        </button>
+      </div>
+
+      <nav class="mobile-nav" id="mobile-nav" aria-label="قائمة الجوال">
+        <a class="mobile-link" href="#home">الرئيسية</a>
+        <a class="mobile-link" href="#products">المنتجات</a>
+        <a class="mobile-link" href="#about">من نحن</a>
+        <a class="mobile-link" href="#contact">اتصل بنا</a>
+        <a class="mobile-link mobile-link-cta" href="#contact">تواصل معنا</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-overlay" aria-hidden="true"></div>
+        <div class="container hero-content">
+          <h1>أرض الإخلاص للمواد الغذائية</h1>
+          <p>
+            شركة يمنية رائدة في استيراد وتوريد المواد الغذائية بجودة عالية وأسعار
+            تنافسية.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#about">تعرف على المزيد</a>
+            <a class="btn btn-light" href="#products">عرض المنتجات</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section products" id="products">
+        <div class="container">
+          <header class="section-head">
+            <h2>منتجاتنا الأساسية</h2>
+            <p>
+              نوفر مجموعة متنوعة من المواد الغذائية الأساسية بجودة عالية وأسعار
+              تنافسية.
+            </p>
+          </header>
+
+          <div class="products-grid">
+            <article class="product-card">
+              <div class="product-icon">🍯</div>
+              <h3>السكر</h3>
+              <p>سكر نقي بجودة عالية من أفضل المصادر العالمية.</p>
+              <ul>
+                <li>جودة عالية</li>
+                <li>معبأ بعناية</li>
+                <li>أسعار تنافسية</li>
+              </ul>
+            </article>
+
+            <article class="product-card">
+              <div class="product-icon">🌾</div>
+              <h3>الدقيق</h3>
+              <p>دقيق ممتاز للاستخدام المنزلي والتجاري.</p>
+              <ul>
+                <li>دقيق أبيض</li>
+                <li>دقيق بني</li>
+                <li>دقيق متعدد الاستخدامات</li>
+              </ul>
+            </article>
+
+            <article class="product-card">
+              <div class="product-icon">🫒</div>
+              <h3>الزيوت</h3>
+              <p>زيوت نقية وصحية للطهي والاستخدام العام.</p>
+              <ul>
+                <li>زيت الذرة</li>
+                <li>زيت عباد الشمس</li>
+                <li>زيت الكانولا</li>
+              </ul>
+            </article>
+
+            <article class="product-card">
+              <div class="product-icon">🍚</div>
+              <h3>الأرز</h3>
+              <p>أرز بأنواع مختلفة وجودة عالية جداً.</p>
+              <ul>
+                <li>أرز بسمتي</li>
+                <li>أرز عادي</li>
+                <li>أرز مصري</li>
+              </ul>
+            </article>
+
+            <article class="product-card">
+              <div class="product-icon">🫘</div>
+              <h3>البقوليات</h3>
+              <p>بقوليات طازجة غنية بالبروتين والألياف.</p>
+              <ul>
+                <li>عدس</li>
+                <li>فول</li>
+                <li>حمص</li>
+                <li>فاصوليا</li>
+              </ul>
+            </article>
+          </div>
+
+          <div class="special-order">
+            <div class="special-order-icon">📦</div>
+            <div>
+              <h3>طلبات استيراد خاصة</h3>
+              <p>
+                بالإضافة إلى منتجاتنا الأساسية، نقوم بتنفيذ طلبات استيراد خاصة حسب
+                احتياجات عملائنا والسوق المحلي.
+              </p>
+              <a class="btn btn-primary" href="#contact">اطلب الآن</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section about" id="about">
+        <div class="container">
+          <header class="section-head section-head-left">
+            <h2>من نحن</h2>
+            <p>
+              تعرف على قصة أرض الإخلاص وكيف أصبحنا من الشركات الموثوقة في قطاع
+              استيراد المواد الغذائية.
+            </p>
+          </header>
+
+          <div class="about-grid">
+            <div class="story">
+              <h3>قصتنا</h3>
+              <p>
+                أرض الإخلاص للمواد الغذائية شركة يمنية متخصصة في استيراد وتوريد
+                وتوزيع المواد الغذائية بالجملة، تعمل وفق أسس تجارية حديثة ومعايير
+                جودة عالية، وتخدم شريحة واسعة من تجار الجملة والموزعين في السوق
+                المحلي.
+              </p>
+              <p>
+                نحرص على بناء شراكات استراتيجية طويلة الأمد مع موردين دوليين
+                موثوقين، لضمان توفير منتجات غذائية ذات جودة عالية وأسعار تنافسية.
+              </p>
+            </div>
+
+            <div class="identity-card" aria-label="هوية بصرية مؤقتة">
+              <img class="identity-mark" src="icon.jpeg" alt="شعار أرض الإخلاص" />
+              <h4>أرض الإخلاص</h4>
+              <p>للمواد الغذائية</p>
+            </div>
+          </div>
+
+          <div class="vision-grid">
+            <article class="vision-card">
+              <h3>رؤيتنا</h3>
+              <p>
+                أن نكون من الشركات الرائدة في قطاع استيراد وتجارة المواد الغذائية
+                في اليمن، وأن نصبح شريكًا استراتيجيًا موثوقًا.
+              </p>
+            </article>
+
+            <article class="vision-card">
+              <h3>رسالتنا</h3>
+              <p>
+                توفير مواد غذائية أساسية بجودة عالية وأسعار تنافسية عبر منظومة
+                توريد فعالة وشراكات دولية قوية.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section contact" id="contact">
+        <div class="container">
+          <header class="section-head section-head-left">
+            <h2>اتصل بنا</h2>
+            <p>
+              نحن هنا للإجابة على استفساراتك ومساعدتك في أي احتياجات تجارية.
+            </p>
+          </header>
+
+          <div class="contact-layout">
+            <div class="contact-info">
+              <h3>معلومات التواصل</h3>
+
+              <div class="info-item">
+                <h4>العنوان</h4>
+                <p>تعز - الحوبان - سوق دارس</p>
+                <p>مقابل فندق جراند تعز - اليمن</p>
+              </div>
+
+              <div class="info-item">
+                <h4>الهاتف</h4>
+                <p><a href="tel:+967784773775">+967 784773775</a></p>
+                <p><a href="tel:+967784773776">+967 784773776</a></p>
+              </div>
+
+              <div class="info-item">
+                <h4>البريد الإلكتروني</h4>
+                <p><a href="mailto:info@ardikhlas.com">info@ardikhlas.com</a></p>
+              </div>
+
+              <div class="contact-extension" aria-label="وسائل تواصل إضافية">
+                <h4>قنوات تواصل إضافية</h4>
+                <p>
+                  للطلبات العاجلة والاستفسارات السريعة، يمكنك التواصل مباشرة عبر
+                  القنوات التالية:
+                </p>
+                <ul class="contact-quick-links">
+                  <li>
+                    <a href="tel:+967784773775"
+                      >اتصال مباشر: +967 784773775</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="https://wa.me/967784773775"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >واتساب المبيعات</a
+                    >
+                  </li>
+                  <li>
+                    <a href="mailto:info@ardikhlas.com"
+                      >البريد الرسمي: info@ardikhlas.com</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="contact-form-area">
+              <h3>أرسل لنا رسالة</h3>
+              <div class="form-status" id="form-status" hidden>
+                شكراً لك! تم استقبال رسالتك بنجاح. سنتواصل معك قريباً.
+              </div>
+
+              <form id="contact-form" class="contact-form" novalidate>
+                <label>
+                  <span>الاسم الكامل</span>
+                  <input
+                    type="text"
+                    name="name"
+                    placeholder="أدخل اسمك الكامل"
+                    required
+                  />
+                </label>
+
+                <label>
+                  <span>البريد الإلكتروني</span>
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="بريدك الإلكتروني"
+                    required
+                  />
+                </label>
+
+                <label>
+                  <span>رقم الهاتف</span>
+                  <input type="tel" name="phone" placeholder="رقم هاتفك" />
+                </label>
+
+                <label>
+                  <span>الموضوع</span>
+                  <input
+                    type="text"
+                    name="subject"
+                    placeholder="موضوع الرسالة"
+                    required
+                  />
+                </label>
+
+                <label>
+                  <span>الرسالة</span>
+                  <textarea
+                    name="message"
+                    rows="5"
+                    placeholder="اكتب رسالتك هنا..."
+                    required
+                  ></textarea>
+                </label>
+
+                <button class="btn btn-primary btn-block" type="submit">
+                  إرسال الرسالة
+                </button>
+              </form>
+            </div>
+          </div>
+
+          <div class="hours-card">
+            <h3>ساعات العمل</h3>
+            <div class="hours-grid">
+              <div>
+                <h4>أيام العمل</h4>
+                <p>السبت - الخميس</p>
+              </div>
+              <div>
+                <h4>ساعات العمل</h4>
+                <p>8:00 صباحاً - 6:00 مساءً</p>
+              </div>
+              <div>
+                <h4>الطوارئ</h4>
+                <p>متاح على مدار الساعة</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <div class="footer-brand">
+            <img class="footer-mark" src="icon.jpeg" alt="شعار أرض الإخلاص" />
+            <strong>أرض الإخلاص</strong>
+          </div>
+          <p>
+            شركة يمنية متخصصة في استيراد وتوريد وتوزيع المواد الغذائية بالجملة
+            بجودة عالية وأسعار تنافسية.
+          </p>
+        </div>
+
+        <div>
+          <h4>روابط سريعة</h4>
+          <ul>
+            <li><a href="#home">الرئيسية</a></li>
+            <li><a href="#products">المنتجات</a></li>
+            <li><a href="#about">من نحن</a></li>
+            <li><a href="#contact">اتصل بنا</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>تواصل معنا</h4>
+          <p>تعز - الحوبان - سوق دارس</p>
+          <p>+967 784773775</p>
+          <p>info@ardikhlas.com</p>
+        </div>
+      </div>
+
+      <div class="container footer-bottom">
+        <p>© <span id="current-year"></span> أرض الإخلاص للمواد الغذائية. جميع الحقوق محفوظة.</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
